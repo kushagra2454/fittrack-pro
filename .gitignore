@@ -1,0 +1,17 @@
+# Windows thumbnail cache & desktop files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+
+# Temporary log / scratch files
+*.log
+scratch/

@@ -1,0 +1,202 @@
+/* ==========================================================================
+   FitTrack - Responsive Styles & Mobile Navigation Dock
+   ========================================================================== */
+
+/* Mobile Bottom Navigation Dock (Default Hidden on Desktop) */
+.mobile-bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 68px;
+  background: rgba(15, 19, 28, 0.95);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border-medium);
+  z-index: 900;
+  padding: 0 8px;
+  padding-bottom: env(safe-area-inset-bottom, 0);
+  align-items: center;
+  justify-content: space-around;
+}
+
+.mobile-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: var(--text-muted);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  flex: 1;
+}
+
+.mobile-nav-item svg {
+  width: 20px;
+  height: 20px;
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.mobile-nav-item:active {
+  transform: scale(0.95);
+}
+
+.mobile-nav-item.active {
+  color: var(--accent-neon);
+}
+
+.mobile-nav-item.active svg {
+  transform: translateY(-2px);
+  color: var(--accent-neon);
+}
+
+/* Mobile Quick Floating Workout Action */
+.mobile-nav-item.nav-workout-center {
+  position: relative;
+  top: -12px;
+}
+
+.mobile-nav-item.nav-workout-center .nav-center-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--accent-neon);
+  color: var(--text-inverse);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px var(--accent-neon-glow);
+}
+
+/* --------------------------------------------------------------------------
+   Tablets & Laptops (<= 1100px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1100px) {
+  :root {
+    --sidebar-width: 220px;
+  }
+  
+  .workout-hero-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .workout-hero-visual {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .water-tracker-container {
+    grid-template-columns: 1fr;
+  }
+
+  .nutrition-overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-layout-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Tablets & Mobile (<= 860px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 860px) {
+  /* Hide Desktop Sidebar, Show Bottom Nav */
+  .sidebar {
+    display: none;
+  }
+
+  .mobile-bottom-nav {
+    display: flex;
+  }
+
+  .top-header {
+    padding: 0 18px;
+    height: 68px;
+  }
+
+  .header-date-badge {
+    display: none;
+  }
+
+  .view-container {
+    padding: 20px 16px 88px 16px;
+  }
+
+  .metrics-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .landing-nav {
+    padding: 0 20px;
+    height: 70px;
+  }
+
+  .landing-hero {
+    padding: 50px 20px 40px;
+  }
+
+  .landing-stats-strip {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 24px;
+  }
+
+  .landing-features-section {
+    padding: 40px 20px 80px;
+  }
+
+  .profile-fields-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-canvas-wrapper {
+    height: 230px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Small Mobile Devices (<= 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header-cta-workout {
+    display: none;
+  }
+
+  .view-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .filter-group {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 6px;
+    flex-wrap: nowrap;
+  }
+
+  .timer-digits-display {
+    font-size: 3rem;
+  }
+
+  .landing-stats-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-add-grid {
+    grid-template-columns: 1fr;
+  }
+}
